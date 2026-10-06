@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<head>
+
+<title>Zadanie 16</title>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+<div style="color:navy;font-size:30px;">
+
+<script language="JavaScript">
+
+var liczba1 = prompt("Podaj pierwszą liczbę =", "");
+var A_mis = parseFloat(liczba1);
+
+var liczba2 = prompt("Podaj drugą liczbę =", "");
+var B_mis = parseFloat(liczba2);
+
+var A3_mis = A_mis * A_mis * A_mis;
+var B3_mis = B_mis * B_mis * B_mis;
+
+var skladnik2_mis = 3 * A_mis * A_mis * B_mis;
+var skladnik3_mis = 3 * A_mis * B_mis * B_mis;
+
+var wynik_mis = (A_mis + B_mis) * (A_mis + B_mis) * (A_mis + B_mis);
+
+document.write("wczytane liczby:<br>");
+document.write("A = " + A_mis + "<br>");
+document.write("B = " + B_mis + "<br><br>");
+
+document.write(
+    "(" + A_mis + " + " + B_mis + ")<sup>3</sup> = " +
+    A_mis + "<sup>3</sup> + " +
+    "3·(" + A_mis + ")<sup>2</sup>·(" + B_mis + ") + " +
+    "3·(" + A_mis + ")·(" + B_mis + ")<sup>2</sup> + " +
+    B_mis + "<sup>3</sup> = " +
+    A3_mis + " + " +
+    skladnik2_mis + " + " +
+    skladnik3_mis + " + " +
+    B3_mis + " = " +
+    wynik_mis
+);
+
+</script>
+
+</div>
+
+</body>
+</html>
