@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie25_mis_KOD</title>
+</head>
+
+<body>
+
+
+
+    <textarea rows="20" cols="80">
+
+        
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 25_Miszkiel</title>
+
+    <style>
+        body {
+            background-color: #eeeeee;
+            font-family: Arial;
+            color: #17365d;
+            font-size: 20px;
+        }
+
+        h2 {
+            color: darkred;
+            font-size: 28px;
+        }
+
+        .wynik {
+            color: darkgreen;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<script>
+
+// Autor: Igor Miszkiel
+// Program oblicza stala rozpadu i liczbe atomow po czasie t.
+
+var No_mis = parseFloat(prompt("Podaj poczatkowa liczbe atomow No:"));
+var t_mis = parseFloat(prompt("Podaj czas t [lata]:"));
+var T_mis = parseFloat(prompt("Podaj okres polowicznego rozpadu T1/2 [lata]:"));
+
+// Sprawdzenie poprawnosci danych
+if (isNaN(No_mis) || isNaN(t_mis) || isNaN(T_mis) ||
+    No_mis < 0 || t_mis < 0 || T_mis <= 0) {
+
+    document.write("<p style='color:red'>Podano niepoprawne dane!</p>");
+
+} else {
+
+    // Obliczenie stalej rozpadu
+    var lambda_mis = Math.log(2) / T_mis;
+
+    // Obliczenie liczby atomow po czasie t
+    var N_mis = No_mis * Math.pow(Math.E, -lambda_mis * t_mis);
+
+    // Wypisanie danych wejsciowych
+    document.write("<p class='wynik'>Dane wejsciowe:</p>");
+
+    document.write("No = " + No_mis.toFixed(2) + " sztuk<br>");
+    document.write("t = " + t_mis.toFixed(2) + " lat<br>");
+    document.write("T1/2 = " + T_mis.toFixed(2) + " lat<br><br>");
+
+    // Wypisanie wynikow
+    document.write("<p class='wynik'>Wyniki:</p>");
+
+    document.write("Lambda = " + lambda_mis.toFixed(7) + " 1/rok<br>");
+
+    document.write("N = " + N_mis.toFixed(2) + " sztuk<br>");
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+    </textarea>
+
+</body>
+
+</html>

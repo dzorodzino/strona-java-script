@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie22 - KOD</title>
+</head>
+
+<body>
+
+    <h1>Zadanie22 - KOD</h1>
+
+    <textarea rows="20" cols="80">
+
+
+<html>
+<head>
+    <title>Zadanie22_Miszkiel</title>
+
+    <script language="JavaScript">
+        function obwod_miszkiel(a, b)
+        {
+            a_mis = parseFloat(a);
+            b_mis = parseFloat(b);
+
+            obwod_wynik = 2 * a_mis + 2 * b_mis;
+
+            document.getElementsByName('obwod_mis')[0].value =
+                obwod_wynik.toFixed(2);
+
+            alert("obwod=" + obwod_wynik.toFixed(2) + " cm");
+
+            document.getElementById('wyprowadz_obwod_mis').innerHTML =
+                "Obwód = " + obwod_wynik.toFixed(2) + " cm";
+        }
+
+        function pole_miszkiel(a, b)
+        {
+            a_mis = parseFloat(a);
+            b_mis = parseFloat(b);
+
+            pole_wynik = a_mis * b_mis;
+
+            document.getElementsByName('pole_mis')[0].value =
+                pole_wynik.toFixed(2);
+
+            alert("pole=" + pole_wynik.toFixed(2) + " cm^2");
+
+            document.getElementById('wyprowadz_pole_mis').innerHTML =
+                "Pole = " + pole_wynik.toFixed(2) + " cm^2";
+        }
+    </script>
+</head>
+
+<body>
+    Obliczanie obwodu i pola prostokąta
+    <br><br>
+
+    <form name="formularz"
+          onsubmit="obwod_miszkiel(this.a_dana_mis.value, this.b_dana_mis.value);
+                    pole_miszkiel(this.a_dana_mis.value, this.b_dana_mis.value);
+                    return false;">
+
+        Podaj a =
+        <input size="6" name="a_dana_mis">
+
+        Podaj b =
+        <input size="6" name="b_dana_mis">
+
+        <br><br>
+
+        <input type="submit" value="Oblicz">
+
+        <br><br>
+
+        Obwód =
+        <input size="6" name="obwod_mis" readonly>
+
+        Pole =
+        <input size="6" name="pole_mis" readonly>
+    </form>
+
+    <table>
+        <tr>
+            <td id="wyprowadz_obwod_mis"></td>
+        </tr>
+        <tr>
+            <td id="wyprowadz_pole_mis"></td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+    </textarea>
+
+</body>
+
+</html>

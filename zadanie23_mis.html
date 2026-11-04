@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 23_mis</title>
+</head>
+<body>
+
+
+<form>
+    Podaj d:
+    <input type="number" id="d_mis" value="">
+
+    Podaj x:
+    <input type="number" id="x_mis" value="">
+
+    <br><br>
+
+    <input type="button" value="Oblicz" onclick="oblicz_mis()">
+
+    <br><br>
+
+    Drabina =
+    <input type="text" id="drabina_mis" readonly>
+
+    Alfa =
+    <input type="text" id="alfa_mis" readonly>
+</form>
+
+<script>
+
+function dlugosc_mis(d, x) {
+    return Math.sqrt(Math.pow(d, 2) + Math.pow(x, 2));
+}
+
+function kat_mis(d, x) {
+    return Math.atan(d / x) * 180 / Math.PI;
+}
+
+function oblicz_mis() {
+
+    var d = parseFloat(document.getElementById("d_mis").value);
+    var x = parseFloat(document.getElementById("x_mis").value);
+
+    if (isNaN(d) || isNaN(x) || d <= 0 || x <= 0) {
+        alert("Podaj poprawne wartości d i x!");
+        return;
+    }
+
+    var drabina = dlugosc_mis(d, x);
+    var alfa = kat_mis(d, x);
+
+    document.getElementById("drabina_mis").value = drabina.toFixed(2);
+    document.getElementById("alfa_mis").value = alfa.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>

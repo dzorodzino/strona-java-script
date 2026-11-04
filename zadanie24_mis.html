@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 24-Miszkiel</title>
+</head>
+<body>
+
+<script>
+
+var x1_mis = parseFloat(prompt("Podaj x1:"));
+var x2_mis = parseFloat(prompt("Podaj x2:"));
+
+var liczba_liter_imienia_mis = 4;
+
+// Wypisanie wczytanych liczb
+document.write("Wczytane liczby:<br>");
+document.write("x1 = " + x1_mis + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+document.write("x2 = " + x2_mis + "<br><br>");
+
+// Obliczenie y1
+var y1_mis = 3 * Math.pow(x1_mis,
+liczba_liter_imienia_mis / (liczba_liter_imienia_mis + 2));
+
+document.write("y1 = " + y1_mis.toFixed(2) + "<br><br>");
+
+// Zamiana stopni na radiany
+var rad_mis = (x1_mis * Math.PI) / 180;
+
+// Obliczenie y2
+var y2_mis = 2 * Math.cos(rad_mis) + 3 * Math.sin(rad_mis);
+
+document.write("W stopniach x1 = " + x1_mis + " stopni<br>");
+document.write("W radianach x1 = " + rad_mis.toFixed(2) + " rad<br><br>");
+
+document.write("y2 = " + y2_mis.toFixed(2) + "<br><br>");
+
+// Obliczenie y3
+var y3_mis = Math.cbrt(
+    Math.pow(x1_mis, 5) +
+    2 * Math.pow(x2_mis, 4) * Math.abs(x1_mis - x2_mis)
+);
+
+document.write("y3 = " + y3_mis.toFixed(2) + "<br>");
+
+</script>
+
+</body>
+</html>

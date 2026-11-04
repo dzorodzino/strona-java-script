@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie20_mis_KOD</title>
+</head>
+
+<body>
+
+
+
+    <textarea rows="20" cols="80">
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 20_mis</title>
+</head>
+<body>
+
+
+
+<script>
+
+function AB_mis() {
+    var wynik = Math.sqrt(
+        Math.pow(xa_mis - xb_mis, 2) +
+        Math.pow(ya_mis - yb_mis, 2)
+    );
+    return wynik;
+}
+
+function BC_mis() {
+    var wynik = Math.sqrt(
+        Math.pow(xb_mis - xc_mis, 2) +
+        Math.pow(yb_mis - yc_mis, 2)
+    );
+    return wynik;
+}
+
+function AC_mis() {
+    var wynik = Math.sqrt(
+        Math.pow(xa_mis - xc_mis, 2) +
+        Math.pow(ya_mis - yc_mis, 2)
+    );
+    return wynik;
+}
+
+var xa_mis = parseFloat(prompt("Podaj xa:"));
+var ya_mis = parseFloat(prompt("Podaj ya:"));
+
+var xb_mis = parseFloat(prompt("Podaj xb:"));
+var yb_mis = parseFloat(prompt("Podaj yb:"));
+
+var xc_mis = parseFloat(prompt("Podaj xc:"));
+var yc_mis = parseFloat(prompt("Podaj yc:"));
+
+document.write("Długość boku AB = " + AB_mis().toFixed(2) + "<br>");
+document.write("Długość boku BC = " + BC_mis().toFixed(2) + "<br>");
+document.write("Długość boku AC = " + AC_mis().toFixed(2) + "<br>");
+
+</script>
+
+</body>
+</html>
+
+
+    </textarea>
+
+</body>
+
+</html>

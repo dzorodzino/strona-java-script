@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+<title>zadanie18_Miszkiel</title>
+<meta charset="utf-8">
+</head>
+
+<body>
+<div style="color:navy;font-size:50px;">
+
+<script>
+var a = parseFloat(prompt("a=", ""));
+var b = parseFloat(prompt("b=", ""));
+
+function suma_mis(a, b) {
+    return a + b;
+}
+
+function odejmowanie_mis(a, b) {
+    return a - b;
+}
+
+function od_kwadratu_a_mis(a) {
+    return a * a;
+}
+
+function od_kwadratu_b_mis(b) {
+    return b * b;
+}
+
+function reszta_z_dzielenia_a_przez_b_mis(a, b) {
+    return a % b;
+}
+
+document.write("suma=" + suma_mis(a, b) + "<br>");
+document.write("różnica=" + odejmowanie_mis(a, b) + "<br>");
+document.write("do kwadratu_a=" + od_kwadratu_a_mis(a) + "<br>");
+document.write("do kwadratu_b=" + od_kwadratu_b_mis(b) + "<br>");
+document.write("reszta z dzielenia przez b=" + reszta_z_dzielenia_a_przez_b_mis(a, b) + "<br>");
+</script>
+
+</div>
+</body>
+</html>
