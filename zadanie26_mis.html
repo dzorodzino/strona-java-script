@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 26</title>
+</head>
+<body style="background-color: lightblue; font-size: 20px;">
+
+<h2>Zadanie 26 – Trapez równoramienny</h2>
+
+<form onsubmit="oblicz_mis(); return false;">
+    Podaj długość górnej podstawy a:
+    <input type="number" id="a_mis" step="any" required><br><br>
+
+    Podaj długość dolnej podstawy b:
+    <input type="number" id="b_mis" step="any" required><br><br>
+
+    Podaj wysokość h:
+    <input type="number" id="h_mis" step="any" required><br><br>
+
+    <input type="submit" value="Oblicz">
+</form>
+
+<script>
+// Autor: mis
+
+function Pow_mis(a, b, h) {
+    return ((a + b) * h) / 2;
+}
+
+function Obw_mis(a, b, h) {
+    var ramie_mis = Math.sqrt(
+        Math.pow(h, 2) + Math.pow(Math.abs(a - b) / 2, 2)
+    );
+
+    return a + b + 2 * ramie_mis;
+}
+
+function oblicz_mis() {
+    var a = parseFloat(document.getElementById("a_mis").value);
+    var b = parseFloat(document.getElementById("b_mis").value);
+    var h = parseFloat(document.getElementById("h_mis").value);
+
+    if (a <= 0 || b <= 0 || h <= 0) {
+        alert("Wszystkie wartości muszą być większe od zera!");
+        return;
+    }
+
+    var pole_mis = Pow_mis(a, b, h);
+    var obwod_mis = Obw_mis(a, b, h);
+
+    document.write("<body style='background-color: lightblue; font-size: 20px;'>");
+    document.write("<h2>Wyniki obliczeń trapezu</h2>");
+    document.write("Górna podstawa a = " + a.toFixed(2) + " cm<br>");
+    document.write("Dolna podstawa b = " + b.toFixed(2) + " cm<br>");
+    document.write("Wysokość h = " + h.toFixed(2) + " cm<br><br>");
+    document.write("<b>Pole trapezu = " + pole_mis.toFixed(2) + " cm²</b><br>");
+    document.write("<b>Obwód trapezu = " + obwod_mis.toFixed(2) + " cm</b>");
+    document.write("</body>");
+}
+</script>
+
+</body>
+</html>

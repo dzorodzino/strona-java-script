@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie32_mis_KOD</title>
+</head>
+
+<body>
+
+<h1> Zadanie32_KOD </h1>
+
+
+    <textarea rows="20" cols="80">
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 32 – Miszkiel</title>
+</head>
+
+<body bgcolor="yellow">
+
+    <div style="color:green;font-size:37px;">
+        <script type="text/javascript">
+
+           
+            function router(rodzaj_r, marka_r, predkosc_r, standard_r)
+            {
+                this.rodzaj = rodzaj_r;
+                this.marka = marka_r;
+                this.predkosc = predkosc_r;
+                this.standard = standard_r;
+            }
+
+            
+            router.prototype.router_wyswietl_Miszkiel = function()
+            {
+                document.write("Rodzaj: " + this.rodzaj + "<br>");
+                document.write("Marka: " + this.marka + "<br>");
+                document.write("Prędkość: " + this.predkosc + "<br>");
+                document.write("Standard: " + this.standard + "<br><br>");
+            };
+
+         
+            var router1 = new router("bezprzewodowy", "TP-Link", "1200 Mb/s", "Wi-Fi 5");
+
+            var router2 = new router("przewodowy", "ASUS", "2400 Mb/s", "Wi-Fi 6");
+
+            var router3 = new router("bezprzewodowy", "Xiaomi", "1800 Mb/s", "Wi-Fi 6");
+
+            document.write("Moje nazwisko to MISZKIEL, numer 11, obiekt to router<br><br>");
+
+            document.write("Pierwszy router:<br>");
+            router1.router_wyswietl_Miszkiel();
+
+            document.write("Drugi router:<br>");
+            router2.router_wyswietl_Miszkiel();
+
+            document.write("Trzeci router:<br>");
+            router3.router_wyswietl_Miszkiel();
+
+            router1.liczba_portow = 4;
+
+            router1.router_pokaz_Miszkiel = function()
+            {
+                alert("Liczba portów: " + this.liczba_portow);
+            };
+
+            router1.router_pokaz_Miszkiel();
+
+            document.write("Nowe pole: liczba_portow<br>");
+            document.write("Wartość pola: " + router1.liczba_portow + "<br>");
+            document.write("Nowa metoda: router_pokaz_Miszkiel()");
+
+        </script>
+    </div>
+
+    <br>
+
+    <div style="color:blue;font-size:34px;">
+        Programowanie obiektowe:<br>
+        <br>
+        Słowo kluczowe prototype stosowane jest do:<br>
+        dodawania metod do konstruktora, które są dostępne dla wszystkich jego obiektów.<br>
+        <br>
+        Słowo kluczowe new stosowane jest do:<br>
+        tworzenia nowych obiektów na podstawie konstruktora.
+    </div>
+
+</body>
+</html>
+
+
+    </textarea>
+
+</body>
+
+</html>

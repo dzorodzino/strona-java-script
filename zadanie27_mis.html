@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 27</title>
+</head>
+<body style="background-color: lightgreen; font-size: 20px;">
+
+<h2>Zadanie 27 – Samolot</h2>
+
+<form onsubmit="oblicz_mis(); return false;">
+    Odległość Artura od Dawida (odl):
+    <input type="number" id="odl_mis" step="any" required><br><br>
+
+    Droga przebyta przez samolot (s):
+    <input type="number" id="s_mis" step="any" required><br><br>
+
+    <input type="submit" value="Oblicz">
+</form>
+
+<div id="wynik_mis"></div>
+
+<script>
+// Autor: mis
+
+function h_mis(odl, s) {
+    return Math.sqrt(Math.pow(s, 2) - Math.pow(odl, 2));
+}
+
+function kat_mis(odl, s) {
+    var wysokosc = h_mis(odl, s);
+    return Math.asin(wysokosc / s) * 180 / Math.PI;
+}
+
+function oblicz_mis() {
+    var odl = parseFloat(document.getElementById("odl_mis").value);
+    var s = parseFloat(document.getElementById("s_mis").value);
+
+    if (odl <= 0 || s <= 0 || s < odl) {
+        alert("Podaj poprawne dane. Droga samolotu musi być większa lub równa odległości.");
+        return;
+    }
+
+    var wysokosc_mis = h_mis(odl, s);
+    var kat_wynik_mis = kat_mis(odl, s);
+
+    document.getElementById("wynik_mis").innerHTML =
+        "<h3>Wyniki obliczeń:</h3>" +
+        "Odległość Artura od Dawida: " + odl.toFixed(2) + " m<br>" +
+        "Droga samolotu: " + s.toFixed(2) + " m<br><br>" +
+        "<b>Wysokość samolotu: " + wysokosc_mis.toFixed(2) + " m</b><br>" +
+        "<b>Kąt startu: " + kat_wynik_mis.toFixed(2) + "°</b>";
+}
+</script>
+
+</body>
+</html>

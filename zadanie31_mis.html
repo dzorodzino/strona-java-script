@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 31 – Miszkiel</title>
+</head>
+
+<body bgcolor="lightblue">
+
+    <div style="color:red;font-size:42px;">
+        <script type="text/javascript">
+
+            var router = {
+                rodzaj: 'bezprzewodowy',
+                marka: 'TP-Link',
+                predkosc: '1200 Mb/s',
+
+                router_wyswietl_Miszkiel: function()
+                {
+                    document.write("Dane obiektu Router<br>");
+                    document.write("Rodzaj: " + this.rodzaj + "<br>");
+                    document.write("Marka: " + this.marka + "<br>");
+                    document.write("Prędkość: " + this.predkosc + "<br>");
+                }
+            };
+
+            router.router_wyswietl_Miszkiel();
+
+           
+            router.liczba_portow = 4;
+
+           
+            router.router_pokaz_Miszkiel = function()
+            {
+                alert("Liczba portów: " + this.liczba_portow);
+            };
+
+            router.router_pokaz_Miszkiel();
+
+            document.write("<br>Nowe pole: liczba_portow<br>");
+            document.write("Wartość nowego pola: " + router.liczba_portow + "<br>");
+            document.write("Nowa metoda: router_pokaz_Miszkiel()<br>");
+
+        </script>
+    </div>
+
+    <br>
+
+    <div style="color:blue;font-size:39px;">
+        Mój numer w dzienniku to 11 i moje dane to:<br>
+        Obiekt to router<br>
+        Pola:<br>
+        rodzaj<br>
+        marka<br>
+        predkosc<br>
+        Metoda:<br>
+        router_wyswietl_Miszkiel()<br>
+        <br>
+        Nowe pole: liczba_portow<br>
+        Nowa metoda: router_pokaz_Miszkiel()
+    </div>
+
+</body>
+</html>

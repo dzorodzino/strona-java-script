@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 29_Miszkiel</title>
+</head>
+<body>
+
+<h1>1. W jaki sposób można określić właściwość danego obiektu? (Dwa sposoby wraz z przykładami).</h1>
+<h3>Odpowiedź:</h3>
+
+Właściwość danego obiektu można określić, czyli przypisać wartość do pola odpowiedzialnego za daną właściwość, na dwa sposoby.
+<br><br>
+
+<b>Sposób 1 – za pomocą kropki:</b>
+<br>
+Zapis:
+<br>
+nazwa_obiektu.nazwa_właściwości = wartość;
+<br><br>
+
+Przykłady:<br>
+
+auto.marka = "Opel Omega";<br>
+auto.rok = 1996;<br>
+auto.cena = 25000;<br>
+<br>
+
+<b>Sposób 2 – za pomocą nawiasów kwadratowych:</b>
+<br>
+Zapis:
+<br>
+nazwa_obiektu["nazwa_właściwości"] = wartość;
+<br><br>
+
+Przykład:<br>
+
+auto["cena"] = 25000;<br>
+
+<br>
+
+<h1>2. W jaki sposób można odwołać się do pól (właściwości) i metod?</h1>
+<h3>Odpowiedź:</h3>
+
+Do właściwości i metod obiektu można odwołać się podobnie jak do zwykłych zmiennych i funkcji. Przed nazwą właściwości lub metody należy umieścić nazwę obiektu oraz kropkę.
+<br><br>
+
+Przykład:
+<br>
+console.log(samochod1.kolor);<br>
+samochod1.pokaz();<br>
+<br>
+
+1. samochod1.kolor – odwołanie do właściwości obiektu.
+<br>
+2. samochod1.pokaz() – wywołanie metody obiektu.<br>
+
+
+<h1>3. Wymień cechy charakterystyczne konstruktora.</h1>
+<h3>Odpowiedź:</h3>
+
+1. Jest wywoływany automatycznie podczas tworzenia nowego obiektu.
+<br>
+2. W tradycyjnym modelu klasowym jego nazwa jest taka sama jak nazwa klasy.
+<br>
+3. Nie zwraca jawnie żadnej wartości.
+<br>
+4. Może przyjmować argumenty, podobnie jak zwykła funkcja lub metoda.
+<br>
+5. Służy do inicjalizacji właściwości nowo tworzonego obiektu.
+<br>
+6. Do tworzenia obiektu za pomocą konstruktora używa się słowa kluczowego new.
+
+
+<h1>4. Konstruowanie obiektu na podstawie przykładu – obiekt ma trzy pola oraz jedną metodę.</h1>
+<h3>Odpowiedź:</h3>
+
+Obiekt można utworzyć za pomocą nawiasów klamrowych. Wewnątrz zapisujemy jego właściwości oraz metody.
+<br><br>
+
+Przykład:<br>
+<br>
+var osoba_1 = {<br>
+    nazwisko: "Kowalski",<br>
+    imie: "Jan",<br>
+    zawod: "piekarz",<br>
+
+    wyswietl: function() {<br>
+        document.write(this.nazwisko + " " + this.imie);<br>
+    }<br>
+};<br>
+<br>
+osoba_1.wyswietl();<br>
+
+<br>
+Obiekt osoba_1 posiada:
+<br>
+1. Trzy pola: nazwisko, imie, zawod.
+<br>
+2. Jedną metodę: wyswietl().
+<br><br>
+
+Metoda wyświetla nazwisko oraz imię osoby.
+
+
+<h1>5. Znaczenie słowa this. Jak oddzielamy pola oraz metody?</h1>
+<h3>Odpowiedź:</h3>
+
+Słowo kluczowe this pozwala odwołać się do pola lub metody obiektu z wnętrza tego obiektu.
+<br><br>
+
+Przykład:<br>
+<br>
+var osoba = {<br>
+    imie: "Jan",<br>
+<br>
+    wyswietl: function() {<br>
+        alert(this.imie);<br>
+    }<br>
+};<br>
+<br>
+<br>
+W powyższym przykładzie this.imie oznacza właściwość imie aktualnego obiektu.
+<br><br>
+
+<b>Pola i metody w obrębie jednego obiektu oddzielamy przecinkami.</b>
+
+
+<h1>6. Konstruktor w JS na podstawie przykładu wraz z opisem.</h1>
+<h3>Odpowiedź:</h3>
+
+W JavaScript konstruktor można utworzyć za pomocą zwykłej funkcji. Służy ona do tworzenia obiektów posiadających określone właściwości i metody.
+<br><br>
+
+Przykład:<br>
+<br>
+function klient(nazwisko_k, imie_k, zawod_k) {<br>
+    this.nazwisko = nazwisko_k;<br>
+    this.imie = imie_k;<br>
+    this.zawod = zawod_k;<br>
+<br>
+    this.wypisz = function() {<br>
+        alert(this.nazwisko + " " + this.imie);<br>
+    };<br>
+}<br>
+<br>
+<br>
+Opis przykładu:
+<br>
+1. function klient() – definiuje konstruktor o nazwie klient.
+<br>
+2. nazwisko_k, imie_k, zawod_k – parametry konstruktora.
+<br>
+3. this.nazwisko, this.imie, this.zawod – właściwości tworzonego obiektu.
+<br>
+4. this.wypisz – metoda obiektu wyświetlająca nazwisko i imię.
+<br>
+5. this – odnosi się do aktualnie tworzonego obiektu.
+<br><br>
+
+Konstruktor umożliwia tworzenie wielu obiektów o takiej samej strukturze, ale z różnymi wartościami właściwości.<br>
+
+
+<h1>7. Znaczenie słowa kluczowego new wraz z przykładem.</h1>
+<h3>Odpowiedź:</h3>
+
+Słowo kluczowe new służy do tworzenia nowego obiektu na podstawie konstruktora.
+<br><br>
+
+Przykład:<br>
+<br>
+var osoba1 = new klient("Kowalski", "Jan", "kierowca");<br>
+<br>
+var osoba2 = new klient("Nowak", "Anna", "sekretarka");<br>
+<br>
+
+Opis:
+<br>
+1. new klient() – tworzy nowy obiekt na podstawie konstruktora klient.
+<br>
+2. osoba1 – pierwszy utworzony obiekt.
+<br>
+3. osoba2 – drugi utworzony obiekt.
+<br><br>
+
+Powstały dwa niezależne obiekty posiadające te same właściwości i metody, ale różne wartości danych.
+
+
+<h1>8. Znaczenie słowa kluczowego prototype wraz z przykładem i opisem.</h1>
+<h3>Odpowiedź:</h3>
+
+Właściwość prototype służy do dodawania właściwości i metod do konstruktora. Dzięki niej wszystkie obiekty utworzone na podstawie tego konstruktora mogą korzystać z dodanych elementów.
+<br><br>
+
+Przykład:<br>
+<br>
+function klient() {<br>
+    this.nazwisko = "Bielski";<br>
+    this.imie = "Paweł";<br>
+}<br>
+<br>
+klient.prototype.pisz_dane = function() {<br>
+    document.write(this.nazwisko + " " + this.imie);<br>
+};<br>
+<br>
+klient.prototype.zawod = "kierowca";<br>
+<br>
+var osoba1 = new klient();<br>
+<br>
+osoba1.pisz_dane();<br>
+<br><br>
+
+Opis przykładu:
+<br>
+1. function klient() – tworzy konstruktor.
+<br>
+2. this.nazwisko i this.imie – określają właściwości obiektu.
+<br>
+3. klient.prototype.pisz_dane – dodaje metodę pisz_dane() do prototypu konstruktora.
+<br>
+4. klient.prototype.zawod – dodaje właściwość zawod do prototypu.
+<br>
+5. new klient() – tworzy nowy obiekt.
+<br>
+6. osoba1.pisz_dane() – wywołuje dodaną metodę.
+<br><br>
+
+
+
+<b>Właściwość prototype pozwala dodawać metody i właściwości do konstruktora, dzięki czemu wszystkie obiekty utworzone na jego podstawie mogą z nich korzystać.</b>
+<br><br>
+
+<b>Nowo utworzone obiekty automatycznie uzyskują dostęp do właściwości i metod zapisanych w prototypie.</b>
+
+
+</body>
+</html>
